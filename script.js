@@ -9,3 +9,13 @@ function scrollFunction() {
     document.getElementById("logo").style.fontSize = "35px";
   }
 }
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if($(this).scrollTop() < $("#about").height()){
+       $(".navbar").removeClass("bg-dark");
+    }
+    else{
+       $(".navbar").addClass("bg-dark");
+    }
+  });
+});

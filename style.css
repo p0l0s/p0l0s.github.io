@@ -9,7 +9,8 @@
   --bg-color: rgba(230, 143, 172, 1);
   --primary-color: #rgba(147, 56, 80, 1);
   --secondary-color: #rgba(246, 127, 101, 1);
-  --primary-shadow: #rgba(255, 151, 151, 1);
+  --tertiary-color: #rgba(255, 151, 151, 1);
+  --primary-shadow: #rgba(0,0,0,0.5);
   --secondary-shadow: #a17a69;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;
@@ -47,18 +48,20 @@ body {
 }
 nav {
     position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 3.5rem;
-    background-color: var(--bg-color);
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 2rem 2rem;
+    background: var(--bg-color);
+    box-shadow: 0 3px 5px var(--primary-shadow));
+    font-family: var(--font-family);
   }
   nav h1 {
-    color: var(--primary-color);
+    color: rgba(147, 56, 80, 1);
   }
   
   nav a {
@@ -88,13 +91,14 @@ nav {
   }
   /* Create a sticky/fixed navbar */
 #navbar {
-  overflow: hidden;
+  overflow:hidden ; 
   padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
   transition: 0.4s; /* Adds a transition effect when the padding is decreased */
   position: fixed; /* Sticky/fixed navbar */
   width: 100%;
   top: 0; /* At the top */
   z-index: 99;
+
 }
 
 /* Style the navbar links */
@@ -107,11 +111,17 @@ nav {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  background-color: rgba(230, 143, 172, 1);
 }
 .dropdown-menu {
   background: transparent;
 }
-
+@media only screen and (max-width:500px){
+  .navbar {
+     position: relative !important;
+     margin-bottom: 0px !important;
+  }
+  }
 /* Style the logo */
 #navbar #logo {
   font-size: 30px;
@@ -165,6 +175,7 @@ nav {
   gap: 2.5rem;
   max-width: 68.75rem;
   margin: auto;
+  background-color: rgba(0, 0, 0, 0);
 }
 .hero img {
   height: 37.5rem;
@@ -200,4 +211,17 @@ nav {
 .more-about p {
   line-height: var(--line-height);
   padding: 0.4rem;
+}
+}
+.navbar{
+  position: fixed;
+  width:100%;
+  transition: background-color 1s;
+
+}
+
+.rect{
+  width:100%;
+  height:100vh;
+}
 }
